@@ -1,0 +1,5 @@
+aiohttp
+beautifulsoup4
+discord-py-interactions>=4.2.0
+interactions-tasks
+python-dotenv
