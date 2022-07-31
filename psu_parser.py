@@ -85,11 +85,14 @@ class PSUParser(Extension):
             current_position = direction.position
             previous_position = previous_data[code].position
             if current_position != previous_position:
-                emoji = (
-                    EMOJI_ARROW_DOWN
-                    if current_position > previous_position
-                    else EMOJI_ARROW_UP
-                )
+                if EMOJI_ARROW_UP and EMOJI_ARROW_DOWN:
+                    emoji = (
+                        EMOJI_ARROW_DOWN
+                        if current_position > previous_position
+                        else EMOJI_ARROW_UP
+                    )
+                else:
+                    emoji = ''
                 description = (
                     f"**Место в конкурсе:** {emoji} `{current_position} ({previous_position})` **Всего:** `{direction.total_applications}` \n"
                     f"**Подано оригиналов:** `{direction.originals}` **Всего:** `{direction.total_originals}`\n"
